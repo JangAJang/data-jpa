@@ -1,11 +1,16 @@
 package com.study.datajpa.domain;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Data
 @Table(name = "MEMBER")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString(of = {"id", "username", "age"})
 public class Member {
 
     @Id
@@ -17,7 +22,10 @@ public class Member {
     @Column(name = "MEMBER_AGE")
     private int age;
 
-    protected Member() {}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "TEAM_ID")
+
+    private Team team;
 
     public Member(String username) {
         this.username = username;
