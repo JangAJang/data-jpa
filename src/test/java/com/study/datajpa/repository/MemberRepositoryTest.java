@@ -88,4 +88,19 @@ class MemberRepositoryTest {
         //then
         Assertions.assertThat(result.size()).isEqualTo(1);
     }
+
+    @Test
+    @DisplayName("나이와 이름으로 찾기")
+    public void findUserTest() throws Exception{
+        //given
+        Member member1 = new Member("AAA", 10);
+        Member member2 = new Member("AAA", 20);
+        memberRepository.save(member1);
+        memberRepository.save(member2);
+        //when
+        List<Member> result = memberRepository.findUser("AAA", 15);
+
+        //then
+        Assertions.assertThat(result.size()).isEqualTo(1);
+    }
 }
