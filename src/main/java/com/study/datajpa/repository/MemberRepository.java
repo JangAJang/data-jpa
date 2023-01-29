@@ -31,7 +31,7 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
 
     //Slice<Member> findByAge(int age, Pageable pageable); 이런식으로 했을 때, 여분까지 미리 뽑아온다. 또한, 이렇게 했을 때 불러오는 부분에서도 Slice<>형으로 받아주어야 한다.
 
-    @Modifying
+    @Modifying(clearAutomatically = true)
     @Query("update Member m set m.age = m.age + 1 where m.age > :age")
     int bulkAgePlus(@Param("age")int age);
 }
