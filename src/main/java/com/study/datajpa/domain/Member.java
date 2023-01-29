@@ -31,12 +31,20 @@ public class Member {
         this.username = username;
     }
 
+    public Member(String username, int age, Team team) {
+        this.username = username;
+        this.age = age;
+        changeTeam(team);
+    }
+
     public void changeUsername(String username){
         this.username = username;
     }
 
     public void changeTeam(Team team){
-        this.team.getMembers().remove(this);
+        if(this.team != null){
+            this.team.getMembers().remove(this);
+        }
         team.getMembers().add(this);
         this.team = team;
     }
