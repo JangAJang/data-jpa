@@ -13,4 +13,14 @@ public class Member {
     @Column(name = "MEMBER_ID")
     private Long id;
     private String username;
+
+    public Member() {}
+
+    public Member(String username) {
+        this.username = username;
+    }
+
+    public void changeUsername(String username){
+        this.username = username;
+    }
 }
