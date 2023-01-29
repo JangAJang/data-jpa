@@ -25,6 +25,7 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
     @Query("select new com.study.datajpa.dto.MemberDto(m.id, m.username, t.name) from Member m join m.team t")
     List<MemberDto> findMemberDto();
 
+    @Query(countQuery = "select count(m) from Member m")
     Page<Member> findByAge(int age, Pageable pageable);
 
     //Slice<Member> findByAge(int age, Pageable pageable); 이런식으로 했을 때, 여분까지 미리 뽑아온다. 또한, 이렇게 했을 때 불러오는 부분에서도 Slice<>형으로 받아주어야 한다.
