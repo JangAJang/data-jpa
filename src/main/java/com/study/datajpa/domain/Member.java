@@ -1,4 +1,4 @@
-package com.study.datajpa.entity;
+package com.study.datajpa.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;

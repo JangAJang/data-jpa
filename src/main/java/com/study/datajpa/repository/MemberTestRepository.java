@@ -1,6 +1,6 @@
 package com.study.datajpa.repository;
 
-import com.study.datajpa.entity.Member;
+import com.study.datajpa.domain.Member;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
