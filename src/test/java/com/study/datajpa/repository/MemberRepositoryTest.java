@@ -168,4 +168,20 @@ class MemberRepositoryTest {
         Assertions.assertThat(result.getContent().size()).isEqualTo(3);
         Assertions.assertThat(result.getTotalElements()).isEqualTo(5);
     }
+
+    @Test
+    @DisplayName("")
+    public void bulkUpdate() throws Exception{
+        //given
+        memberRepository.save(new Member("member1", 10));
+        memberRepository.save(new Member("member2", 19));
+        memberRepository.save(new Member("member3", 20));
+        memberRepository.save(new Member("member4", 21));
+        memberRepository.save(new Member("member5", 40));
+        //when
+        int resultCount = memberRepository.bulkAgePlus(20);
+
+        //then
+        Assertions.assertThat(resultCount).isEqualTo(2);
+    }
 }
