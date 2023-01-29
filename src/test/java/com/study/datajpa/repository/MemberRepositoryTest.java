@@ -8,9 +8,13 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 @SpringBootTest
@@ -144,5 +148,23 @@ class MemberRepositoryTest {
             Assertions.assertThat(dto.getName()).isEqualTo(member1.getUsername());
             Assertions.assertThat(dto.getTeamMane()).isEqualTo(team.getName());
         }
+    }
+
+    @Test
+    @DisplayName("")
+    public void paging() throws Exception{
+        //given
+        memberRepository.save(new Member("member1", 10));
+        memberRepository.save(new Member("member2", 10));
+        memberRepository.save(new Member("member3", 10));
+        memberRepository.save(new Member("member4", 10));
+        memberRepository.save(new Member("member5", 10));
+        int age = 10;
+        PageRequest request = PageRequest.of(0, 3, Sort.by(Sort.Direction.DESC, "username"));
+        //when
+        Page<Member> result = memberRepository.findByAge(age, request);
+        //then
+        Assertions.assertThat(result.getContent().size()).isEqualTo(3);
+        Assertions.assertThat(result.getTotalElements()).isEqualTo(5);
     }
 }
