@@ -103,4 +103,19 @@ class MemberRepositoryTest {
         //then
         Assertions.assertThat(result.size()).isEqualTo(1);
     }
+
+    @Test
+    @DisplayName("")
+    public void findUsernameTest() throws Exception{
+        //given
+        Member member1 = new Member("AAA");
+        Member member2 = new Member("BBB");
+        memberRepository.save(member1);
+        memberRepository.save(member2);
+        //when
+        List<String> names = memberRepository.findUsernameList();
+        //then
+        Assertions.assertThat(names.get(0)).isEqualTo("AAA");
+        Assertions.assertThat(names.get(1)).isEqualTo("BBB");
+    }
 }
