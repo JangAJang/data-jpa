@@ -3,6 +3,8 @@ package com.study.datajpa.repository;
 import com.study.datajpa.domain.Member;
 import com.study.datajpa.domain.Team;
 import com.study.datajpa.dto.MemberDto;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -27,6 +29,9 @@ class MemberRepositoryTest {
 
     @Autowired
     private TeamRepository teamRepository;
+
+    @PersistenceContext
+    EntityManager em;
 
     @Test
     public void testMember(){
@@ -183,5 +188,28 @@ class MemberRepositoryTest {
 
         //then
         Assertions.assertThat(resultCount).isEqualTo(2);
+    }
+
+    @Test
+    @DisplayName("")
+    public void fetchJoinTest() throws Exception{
+        //given
+        Team team1 = new Team("team1");
+        Team team2 = new Team("team2");
+        teamRepository.save(team1);
+        teamRepository.save(team2);
+
+        memberRepository.save(new Member("member1", 10, team1));
+        memberRepository.save(new Member("member1", 10, team2));
+
+        em.flush();
+        em.clear();
+        //when
+        List<Member> members = memberRepository.findEntityGraphByUsername("member1");
+        //then
+        for (Member member : members) {
+            System.out.println(member.toString());
+            System.out.println(member.getTeam().getName());
+        }
     }
 }
