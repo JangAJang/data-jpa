@@ -163,6 +163,7 @@ class MemberRepositoryTest {
         PageRequest request = PageRequest.of(0, 3, Sort.by(Sort.Direction.DESC, "username"));
         //when
         Page<Member> result = memberRepository.findByAge(age, request);
+        Page<MemberDto> dtos = result.map(m-> new MemberDto(m.getId(), m.getUsername(), m.getTeam().getName()));
         //then
         Assertions.assertThat(result.getContent().size()).isEqualTo(3);
         Assertions.assertThat(result.getTotalElements()).isEqualTo(5);
