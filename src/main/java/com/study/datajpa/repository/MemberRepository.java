@@ -1,6 +1,7 @@
 package com.study.datajpa.repository;
 
 import com.study.datajpa.domain.Member;
+import com.study.datajpa.dto.MemberDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -17,4 +18,7 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
     //값타입 조회하기
     @Query("select m.username from Member m")
     List<String> findUsernameList();
+
+    @Query("select new com.study.datajpa.dto.MemberDto(m.id, m.username, t.name) from Member m join m.team t")
+    List<MemberDto> findMemberDto();
 }
