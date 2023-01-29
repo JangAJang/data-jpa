@@ -1,6 +1,8 @@
 package com.study.datajpa.repository;
 
 import com.study.datajpa.domain.Member;
+import com.study.datajpa.domain.Team;
+import com.study.datajpa.dto.MemberDto;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -18,6 +20,9 @@ class MemberRepositoryTest {
 
     @Autowired
     private MemberRepository memberRepository;
+
+    @Autowired
+    private TeamRepository teamRepository;
 
     @Test
     public void testMember(){
@@ -117,5 +122,27 @@ class MemberRepositoryTest {
         //then
         Assertions.assertThat(names.get(0)).isEqualTo("AAA");
         Assertions.assertThat(names.get(1)).isEqualTo("BBB");
+    }
+
+    @Test
+    @DisplayName("")
+    public void findMemberDtoTest() throws Exception{
+        //given
+        Team team = new Team("teamA");
+        teamRepository.save(team);
+
+        Member member1 = new Member("AAA");
+        member1.changeTeam(team);
+        memberRepository.save(member1);
+
+        //when
+        List<MemberDto> dtos = memberRepository.findMemberDto();
+        //then
+        for (MemberDto dto : dtos) {
+            System.out.println(dto);
+            Assertions.assertThat(dto.getId()).isEqualTo(member1.getId());
+            Assertions.assertThat(dto.getName()).isEqualTo(member1.getUsername());
+            Assertions.assertThat(dto.getTeamMane()).isEqualTo(team.getName());
+        }
     }
 }
