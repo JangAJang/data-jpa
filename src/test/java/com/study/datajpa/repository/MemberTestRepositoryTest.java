@@ -81,4 +81,21 @@ class MemberTestRepositoryTest {
         //then
         Assertions.assertThat(result.size()).isEqualTo(1);
     }
+    
+    @Test
+    @DisplayName("")        
+    public void paging() throws Exception{
+        //given
+        memberTestRepository.saveMember(new Member("member1", 10));
+        memberTestRepository.saveMember(new Member("member2", 10));
+        memberTestRepository.saveMember(new Member("member3", 10));
+        memberTestRepository.saveMember(new Member("member4", 10));
+        memberTestRepository.saveMember(new Member("member5", 10));
+        //when
+        List<Member> result = memberTestRepository.findByPage(10, 0, 3);
+        long totalCount = memberTestRepository.countTotal(10);
+        //then
+        Assertions.assertThat(result.size()).isEqualTo(3);
+        Assertions.assertThat(memberTestRepository.countMember()).isEqualTo(5);
+    }
 }

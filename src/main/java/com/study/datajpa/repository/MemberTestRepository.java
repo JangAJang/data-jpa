@@ -71,7 +71,7 @@ public class MemberTestRepository {
                 .getResultList();
     }
 
-    public Long countTotal(int age, int offset, int limit){
+    public Long countTotal(int age){
         return em.createQuery("select count(m) from Member m " + "where m.age = :age ", Long.class)
                 .setParameter("age", age)
                 .getSingleResult();
