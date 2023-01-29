@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.study.datajpa.repository.MemberRepositoryTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-01-29T10:45:49" hostname="ijanghuiui-MacBookPro.local" time="0.183">
+  <properties/>
+  <testcase name="Create Test" classname="com.study.datajpa.repository.MemberRepositoryTest" time="0.11"/>
+  <testcase name="Delete Test" classname="com.study.datajpa.repository.MemberRepositoryTest" time="0.057"/>
+  <testcase name="Update Test" classname="com.study.datajpa.repository.MemberRepositoryTest" time="0.006"/>
+  <testcase name="Read All Test" classname="com.study.datajpa.repository.MemberRepositoryTest" time="0.004"/>
+  <testcase name="testMember()" classname="com.study.datajpa.repository.MemberRepositoryTest" time="0.003"/>
+  <system-out><![CDATA[19:45:47.895 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [MemberRepositoryTest]: using SpringBootContextLoader
+19:45:47.898 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.study.datajpa.repository.MemberRepositoryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+19:45:47.898 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.study.datajpa.repository.MemberRepositoryTest]: MemberRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:45:47.909 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [MemberRepositoryTest]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer]
+19:45:47.944 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/leeeehgnaj/Desktop/Coding/data-jpa/build/classes/java/main/com/study/datajpa/DataJpaApplication.class]
+19:45:47.945 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.study.datajpa.DataJpaApplication for test class com.study.datajpa.repository.MemberRepositoryTest
+19:45:47.984 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [MemberRepositoryTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+19:45:47.985 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [MemberRepositoryTest], class annotated with @DirtiesContext [false] with mode [null]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.2)
+
+2023-01-29T19:45:48.122+09:00  INFO 1412 --- [    Test worker] c.s.d.repository.MemberRepositoryTest    : Starting MemberRepositoryTest using Java 17.0.2 with PID 1412 (started by leeeehgnaj in /Users/leeeehgnaj/Desktop/Coding/data-jpa)
+2023-01-29T19:45:48.123+09:00  INFO 1412 --- [    Test worker] c.s.d.repository.MemberRepositoryTest    : No active profile set, falling back to 1 default profile: "default"
+2023-01-29T19:45:48.355+09:00  INFO 1412 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-29T19:45:48.377+09:00  INFO 1412 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interfaces.
+2023-01-29T19:45:48.547+09:00  INFO 1412 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-29T19:45:48.567+09:00  INFO 1412 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-01-29T19:45:48.636+09:00  WARN 1412 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-01-29T19:45:48.680+09:00  INFO 1412 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-29T19:45:48.718+09:00  INFO 1412 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:tcp://localhost/~/datajpa user=SA
+2023-01-29T19:45:48.719+09:00  INFO 1412 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-29T19:45:48.742+09:00  INFO 1412 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-29T19:45:49.073+09:00  INFO 1412 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-29T19:45:49.076+09:00  INFO 1412 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-29T19:45:49.163+09:00  WARN 1412 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-29T19:45:49.383+09:00  INFO 1412 --- [    Test worker] c.s.d.repository.MemberRepositoryTest    : Started MemberRepositoryTest in 1.377 seconds (process running for 1.834)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
