@@ -9,6 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @SpringBootTest
 @Transactional
 @Rollback(value = false)
@@ -70,5 +72,20 @@ class MemberRepositoryTest {
         memberRepository.delete(member);
         //then
         Assertions.assertThat(memberRepository.findAll()).doesNotContain(member);
+    }
+
+    @Test
+    @DisplayName("이름이 같고 나이가 크거나 같은 경우 조회")
+    public void findByUsernameAndAgeGreaterThenTest() throws Exception{
+        //given
+        Member member1 = new Member("AAA", 10);
+        Member member2 = new Member("AAA", 20);
+        memberRepository.save(member1);
+        memberRepository.save(member2);
+        //when
+        List<Member> result = memberRepository.findByUsernameAndAgeGreaterThan("AAA", 15);
+
+        //then
+        Assertions.assertThat(result.size()).isEqualTo(1);
     }
 }
