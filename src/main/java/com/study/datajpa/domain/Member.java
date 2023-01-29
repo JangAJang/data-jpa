@@ -34,4 +34,10 @@ public class Member {
     public void changeUsername(String username){
         this.username = username;
     }
+
+    public void changeTeam(Team team){
+        this.team.getMembers().remove(this);
+        team.getMembers().add(this);
+        this.team = team;
+    }
 }
