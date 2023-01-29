@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 @RequiredArgsConstructor
 @Repository
-public class MemberRepository {
+public class MemberTestRepository {
 
     @PersistenceContext
     private EntityManager em;
