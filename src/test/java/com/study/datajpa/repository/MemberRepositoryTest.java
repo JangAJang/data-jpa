@@ -212,4 +212,21 @@ class MemberRepositoryTest {
             System.out.println(member.getTeam().getName());
         }
     }
+
+    @Test
+    @DisplayName("")        
+    public void queryHint() throws Exception{
+        //given
+        Member member = new Member("member1", 10);
+        memberRepository.save(member);
+        em.flush();
+        em.clear();
+
+        //when
+        Member findMember = memberRepository.findById(member.getId()).get();
+        findMember.changeUsername("member2");
+        em.flush();
+        //then
+        
+    }
 }
