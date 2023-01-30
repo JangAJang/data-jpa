@@ -12,7 +12,9 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface MemberRepository extends JpaRepository<Member, Long> {
+//커스텀 리포지토리 적용 방식 기본
+//Repository <- Custom Repository 인터페이스 <- Custom Repository 인터페이스에 implement 시킬 클래스
+public interface MemberRepository extends JpaRepository<Member, Long>, MemberCustomRepository {
 
     List<Member> findByUsernameAndAgeGreaterThan(String username, int age);
 
