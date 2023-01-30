@@ -223,10 +223,12 @@ class MemberRepositoryTest {
         em.clear();
 
         //when
-        Member findMember = memberRepository.findById(member.getId()).get();
+        Member findMember = memberRepository.findReadOnlyByUsername(member.getUsername());
         findMember.changeUsername("member2");
         em.flush();
+        em.clear();
         //then
-        
+        Member dbMember = memberRepository.findById(member.getId()).get();
+        Assertions.assertThat(findMember.getUsername()).isNotEqualTo(dbMember.getUsername());
     }
 }

@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.155s</div>
+<div class="counter">0.150s</div>
 <p>duration</p>
 </div>
 </td>
@@ -78,8 +78,8 @@
 </tr>
 </thead>
 <tr>
-<td class="success">fetchJoinTest()</td>
-<td class="success">0.155s</td>
+<td class="success">queryHint()</td>
+<td class="success">0.150s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,14 +87,14 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>21:24:18.736 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [MemberRepositoryTest]: using SpringBootContextLoader
-21:24:18.737 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.study.datajpa.repository.MemberRepositoryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-21:24:18.738 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.study.datajpa.repository.MemberRepositoryTest]: MemberRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-21:24:18.749 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [MemberRepositoryTest]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer]
-21:24:18.782 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/leeeehgnaj/Desktop/Coding/data-jpa/build/classes/java/main/com/study/datajpa/DataJpaApplication.class]
-21:24:18.783 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.study.datajpa.DataJpaApplication for test class com.study.datajpa.repository.MemberRepositoryTest
-21:24:18.821 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [MemberRepositoryTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
-21:24:18.822 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [MemberRepositoryTest], class annotated with @DirtiesContext [false] with mode [null]
+<pre>17:57:42.265 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [MemberRepositoryTest]: using SpringBootContextLoader
+17:57:42.266 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.study.datajpa.repository.MemberRepositoryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+17:57:42.267 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.study.datajpa.repository.MemberRepositoryTest]: MemberRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:57:42.275 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [MemberRepositoryTest]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer]
+17:57:42.305 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/leeeehgnaj/Desktop/Coding/data-jpa/build/classes/java/main/com/study/datajpa/DataJpaApplication.class]
+17:57:42.305 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.study.datajpa.DataJpaApplication for test class com.study.datajpa.repository.MemberRepositoryTest
+17:57:42.340 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [MemberRepositoryTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+17:57:42.341 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [MemberRepositoryTest], class annotated with @DirtiesContext [false] with mode [null]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -104,25 +104,23 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.2)
 
-2023-01-29T21:24:18.959+09:00  INFO 9408 --- [    Test worker] c.s.d.repository.MemberRepositoryTest    : Starting MemberRepositoryTest using Java 17.0.2 with PID 9408 (started by leeeehgnaj in /Users/leeeehgnaj/Desktop/Coding/data-jpa)
-2023-01-29T21:24:18.959+09:00  INFO 9408 --- [    Test worker] c.s.d.repository.MemberRepositoryTest    : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2023-01-29T21:24:19.194+09:00  INFO 9408 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-29T21:24:19.219+09:00  INFO 9408 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
-2023-01-29T21:24:19.383+09:00  INFO 9408 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-29T21:24:19.402+09:00  INFO 9408 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
-2023-01-29T21:24:19.471+09:00  WARN 9408 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
-2023-01-29T21:24:19.519+09:00  INFO 9408 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-29T21:24:19.565+09:00  INFO 9408 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:tcp://localhost/~/datajpa user=SA
-2023-01-29T21:24:19.566+09:00  INFO 9408 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-29T21:24:19.588+09:00  INFO 9408 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-01-29T21:24:19.910+09:00  INFO 9408 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-29T21:24:19.913+09:00  INFO 9408 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-29T21:24:19.999+09:00  WARN 9408 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-29T21:24:20.415+09:00  INFO 9408 --- [    Test worker] c.s.d.repository.MemberRepositoryTest    : Started MemberRepositoryTest in 1.573 seconds (process running for 2.035)
-Member(id=1, username=member1, age=10)
-team1
-Member(id=2, username=member1, age=10)
-team2
+2023-01-30T17:57:42.473+09:00  INFO 30331 --- [    Test worker] c.s.d.repository.MemberRepositoryTest    : Starting MemberRepositoryTest using Java 17.0.2 with PID 30331 (started by leeeehgnaj in /Users/leeeehgnaj/Desktop/Coding/data-jpa)
+2023-01-30T17:57:42.475+09:00  INFO 30331 --- [    Test worker] c.s.d.repository.MemberRepositoryTest    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-01-30T17:57:42.717+09:00  INFO 30331 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-30T17:57:42.746+09:00  INFO 30331 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 2 JPA repository interfaces.
+2023-01-30T17:57:42.918+09:00  INFO 30331 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-30T17:57:42.938+09:00  INFO 30331 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-01-30T17:57:43.002+09:00  WARN 30331 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-01-30T17:57:43.050+09:00  INFO 30331 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-30T17:57:43.084+09:00  INFO 30331 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:tcp://localhost/~/datajpa user=SA
+2023-01-30T17:57:43.085+09:00  INFO 30331 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-30T17:57:43.105+09:00  INFO 30331 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-30T17:57:43.418+09:00  INFO 30331 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-30T17:57:43.421+09:00  INFO 30331 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-30T17:57:43.508+09:00  WARN 30331 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-30T17:57:43.916+09:00  INFO 30331 --- [    Test worker] c.s.d.repository.MemberRepositoryTest    : Started MemberRepositoryTest in 1.558 seconds (process running for 1.989)
+member2
+member1
 </pre>
 </span>
 </div>
@@ -134,7 +132,7 @@ team2
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6</a> at 2023. 1. 29. 오후 9:24:20</p>
+<a href="http://www.gradle.org">Gradle 7.6</a> at 2023. 1. 30. 오후 5:57:44</p>
 </div>
 </div>
 </body>
