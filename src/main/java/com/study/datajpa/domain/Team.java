@@ -13,7 +13,7 @@ import java.util.List;
 @Data
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Team {
+public class Team extends JpaBasicEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
