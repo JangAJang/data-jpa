@@ -246,4 +246,25 @@ class MemberRepositoryTest {
         //then
         Assertions.assertThat(originalRepositoryResult).isEqualTo(customRepositoryResult);
     }
+
+    @Test
+    @DisplayName("")
+    public void createAndUpdateDateTest() throws Exception{
+        //given
+        Member member = new Member("Member1", 10);
+        memberRepository.save(member);
+        Thread.sleep(100);
+
+        member.changeUsername("member2");
+
+        em.flush();
+        em.clear();
+        //when
+        Member find = memberRepository.findById(member.getId()).get();
+
+        //then
+        System.out.println("created at " + find.getCreateDate());
+        System.out.println("updated at " + find.getUpdateDate());
+        Assertions.assertThat(find.getCreateDate()).isNotEqualTo(find.getUpdateDate());
+    }
 }
