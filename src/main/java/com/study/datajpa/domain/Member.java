@@ -11,7 +11,7 @@ import lombok.ToString;
 @Table(name = "MEMBER")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString(of = {"id", "username", "age"})
-public class Member {
+public class Member extends JpaBasicEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
