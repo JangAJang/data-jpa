@@ -231,4 +231,19 @@ class MemberRepositoryTest {
         Member dbMember = memberRepository.findById(member.getId()).get();
         Assertions.assertThat(findMember.getUsername()).isNotEqualTo(dbMember.getUsername());
     }
+
+    @Test
+    @DisplayName("")
+    public void customRepositoryTest() throws Exception{
+        //given
+        for(int index = 0; index < 5; index++){
+            Member member = new Member("username"+index, index+10);
+            memberRepository.save(member);
+        }
+        //when
+        List<Member> originalRepositoryResult = memberRepository.findAll();
+        List<Member> customRepositoryResult = memberRepository.findMemberCustom();
+        //then
+        Assertions.assertThat(originalRepositoryResult).isEqualTo(customRepositoryResult);
+    }
 }
