@@ -264,7 +264,9 @@ class MemberRepositoryTest {
 
         //then
         System.out.println("created at " + find.getCreateDate());
-        System.out.println("updated at " + find.getUpdateDate());
-        Assertions.assertThat(find.getCreateDate()).isNotEqualTo(find.getUpdateDate());
+        System.out.println("last modified by " + find.getLastModifiedDate());
+        System.out.println("created by " + find.getCreatedBy());
+        System.out.println("last modified by " + find.getLastModifiedBy());
+        Assertions.assertThat(find.getCreateDate()).isNotEqualTo(find.getLastModifiedDate());
     }
 }
